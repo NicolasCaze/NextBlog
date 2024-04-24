@@ -27,7 +27,7 @@ return (
     <DropdownMenu>
         <DropdownMenuTrigger>
             <Avatar>
-                <AvatarImage className="w-50 h-50" src={session.user?.image || "/avatar.jpeg" }/> {"  "}
+                <AvatarImage className="w-8 h-8" src={session.user?.image || "/avatar.jpeg" }/> {"  "}
                 <AvatarFallback>{session.user?.name}</AvatarFallback>
                
             </Avatar>
