@@ -5,8 +5,7 @@ import {PrismaAdapter} from "@auth/prisma-adapter";
 import prisma from "./connect";
 
 
-export const config = {
-    debug: true,
+export const { handlers: {GET, POST}, auth, signIn , signOut} = NextAuth ({
     adapter: PrismaAdapter(prisma),
     secret: process.env.NEXTAUTH_SECRET,
     providers: [
@@ -19,6 +18,5 @@ export const config = {
             clientSecret: process.env.GOOGLE_SECRET as string,
         }),
     ],
-};
+});
 
-export const { handlers, auth, signIn, signOut } = NextAuth(config)

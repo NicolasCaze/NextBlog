@@ -1,4 +1,4 @@
-import { getAuthSession } from "@/lib/auth-options"
+import { auth } from "@/lib/auth-options"
 import { NextResponse } from "next/server";
 import prisma from "@/lib/connect"
 
@@ -30,7 +30,7 @@ export const GET = async (req: Request) => {
 
 export const POST = async (req: Request) => {
     try {
-        const session = await getAuthSession();
+        const session = await auth();
         if (!session || !session.user){
             return NextResponse.json(
                 {message: "Not Authentificayed"}, 

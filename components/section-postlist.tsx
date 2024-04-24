@@ -1,4 +1,4 @@
-import { POSTS, Post, PostWithCategory } from "@/types";
+import { PostWithCategory } from "@/types";
 import PageContainer from "./page-container";
 
 import PostCard from "./post-card";

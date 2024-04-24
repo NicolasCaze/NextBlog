@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useCategories } from "@/hook/useCategories";
 import { usePosts } from "@/hook/usePosts";
-import { POSTS, category } from "@/types";
 import { Category } from "@prisma/client";
 
 import Image from "next/image";

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import prisma from "@/lib/connect";
-import { getAuthSession } from "@/lib/auth-options";
+import { auth } from "@/lib/auth-options";
 
 export const GET = async (req: Request) => {
     try {
@@ -39,7 +39,7 @@ export const GET = async (req: Request) => {
 
 export const POST = async (req: Request) => {
     try {
-        const session = await getAuthSession();
+        const session = await auth();
         if (!session || !session.user){
             return NextResponse.json(
                 {message: "Not Authentificated"},
