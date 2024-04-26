@@ -23,11 +23,13 @@ export default function Comments({
     mutationFn: (newComments) => axios.post("/api/comment", newComments) as Promise<AxiosResponse<Comments>>,
     onSuccess: (data) => {
       console.log("data on success", data);
+      window.location.reload(); // Recharge la page après l'envoi du commentaire
     },
   });
+
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
-  
+
     if (content !== "" && session?.user?.email) {
       mutate({
         content,
@@ -35,7 +37,7 @@ export default function Comments({
         userEmail: session.user.email,
       } as Partial<Comments>);
     }
-  }; 
+  };
 
   const {data: comments, isFetching} = useComments(postSlug);
     return (
