@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className="border-b px-4">
       <PageContainer>
-        <div className="flex items-center justify-between gap-44 w-full ">
+        <div className="flex items-center justify-between w-full ">
           <MenuBurger />
           <div className=" text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-red-400 to-blue-600 ">
   <Link href="/">NextBlog</Link>

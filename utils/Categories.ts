@@ -9,13 +9,13 @@ export const CATEGORIES: category[] = [
     },
     {
         id: 2,
-        name: "Symphony",
+        name: "Symfony",
         slug: "Symphony"
 
     },
     {
         id: 3,
-        name: "Typescipt",
+        name: "Typescript",
         slug: "Typescipt"
 
     },

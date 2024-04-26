@@ -3,13 +3,24 @@ import PageContainer from "@/components/page-container"
 import PageTitle from "@/components/page-title"
 import { Button } from "@/components/ui/button"
 import { Github, Mail } from "lucide-react"
-import { signIn } from "next-auth/react"
-import React from "react"
+import { signIn, useSession } from "next-auth/react"
+import { useRouter } from "next/navigation"
+import React, { useLayoutEffect } from "react"
 
 export default function Login() {
     const onLogin = (provider: string ) => () => { 
         signIn(provider)
      }
+
+     const {data: session, status} = useSession();
+    const router = useRouter();
+
+    useLayoutEffect(() => {
+        if (session) {
+          router.replace("/");
+          return;
+        }
+      }, [router, session]);
     return (
         <PageContainer>
             <div className="p-10">
